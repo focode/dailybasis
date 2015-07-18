@@ -3,7 +3,7 @@
 #----------------------------------------------------------------------------#
 
 from flask import Flask, render_template, request
-# from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 from forms import *
@@ -14,7 +14,7 @@ from forms import *
 
 app = Flask(__name__)
 app.config.from_object('config')
-#db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 # Automatically tear down SQLAlchemy.
 '''
@@ -59,6 +59,10 @@ def login():
 @app.route('/milkprofile')
 def milkprofile():
     return render_template('forms/editscreen.html')
+	
+@app.route('/editprofile')
+def editprofile():
+    return render_template('forms/editprofile.html')
 
 
 @app.route('/register')
