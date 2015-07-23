@@ -3,7 +3,7 @@
 	   {% block content %}
 	   
 
-	    	<form id="ff"  class="form-group" method="post">
+	    	<form id="ff"  class="form-group" action="/milkprofileForm" method="post">
 					<div class="form-group">
 						<label for="name">Select Milk Animal:</label>
 						<select name="select" data-options="required:true">
@@ -36,7 +36,7 @@
 					</div>
 					<div class="form-group">
 						<label for="name">Select Date and Time:</label>
-					<input class="easyui-datetimespinner" style="width:300px">
+					<input class="easyui-datetimespinner" name="dateofdelivery" style="width:300px">
 					</div>
 						
 					<div class="form-group">
@@ -77,8 +77,9 @@
 					<div class="form-group">
 						
 					<div class="form-group">
-	                        <input type="submit" value="Submit">
+	                        <input id="submit" type="submit" value="Submit">
 	                </div>
+					<div id="message"></div>
 			</form>
 
 	   {% endblock %}

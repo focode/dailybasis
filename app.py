@@ -2,7 +2,7 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
@@ -56,11 +56,23 @@ def login():
     return render_template('forms/login.html', form=form)
 
 	
-@app.route('/milkprofile')
+@app.route('/milkprofile', methods=['POST','GET'])
 def milkprofile():
-    return render_template('forms/editscreen.html')
+
+	return render_template('forms/editscreen.html')
 	
-@app.route('/editprofile')
+@app.route('/milkprofileForm', methods=['POST','GET'])
+def postprofile():
+	print "something is comming here"
+	contactnoo =  request.form['contactno'];
+	print "Value of contactnoo is :",contactnoo,request.form
+	
+	dateval = request.form['dateofdelivery'];
+	print "value of date=",
+	return 'OK'
+	
+
+@app.route('/editprofile', methods=['POST'])
 def editprofile():
     return render_template('forms/editprofile.html')
 
