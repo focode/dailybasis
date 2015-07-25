@@ -66,7 +66,7 @@ def postprofile():
 	print "something is comming here"
 	contactnoo =  request.form['contactno'];
 	print "Value of contactnoo is :",contactnoo,request.form
-	
+	request.
 	dateval = request.form['dateofdelivery'];
 	print "value of date=",
 	return 'OK'
